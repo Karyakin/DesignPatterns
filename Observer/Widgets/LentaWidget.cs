@@ -2,29 +2,18 @@
 
 namespace Observer.Widgets;
 
-public class LentaWidget : IWidgetObserver, IWidget
+public class LentaWidget : IWidget
 {
     private string _lenta;
-    private ISubject _subject;
 
-    public LentaWidget(ISubject subject)
+    public void Update(object sender, NewsEventArgs args)
     {
-        _subject = subject;
-        subject.RegisterObserver(this);
-    }
-    public void Update(string twitter, string lenta, string tv)
-    {
-        _lenta = lenta;
+        _lenta = args.Lenta;
         Display();
     }
 
     public void Display()
     {
         Console.WriteLine($"Lenta: {_lenta}");
-    }
-
-    public void RemoveFromSubject()
-    {
-        _subject.RemoveObserver(this);
     }
 }

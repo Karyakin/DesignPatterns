@@ -9,13 +9,16 @@ using Observer.News;
 using Observer.Widgets;
 
 var newsAggregator = new NewsAggregator();
-var twitterWidget = new TwitterWidget(newsAggregator);
-var lentaWidget = new LentaWidget(newsAggregator);
-var tvWidget = new TvWidget(newsAggregator);
+var twitterWidget = new TwitterWidget();
+var lentaWidget = new LentaWidget();
+var tvWidget = new TvWidget();
+
+newsAggregator.NewsChanged += twitterWidget.Update;
+newsAggregator.NewsChanged += lentaWidget.Update;
+newsAggregator.NewsChanged += tvWidget.Update;
 
 newsAggregator.NewNewsAvailable();
 Console.WriteLine();
-twitterWidget.RemoveFromSubject();
 newsAggregator.NewNewsAvailable();
 
 

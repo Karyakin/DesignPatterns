@@ -2,39 +2,18 @@
 
 namespace Observer.News;
 
-public class NewsAggregator : ISubject
+public class NewsAggregator
 {
     private static Random _random;
-    private List<IWidgetObserver> _widgetObservers;
 
     public NewsAggregator()
     {
         _random = new Random();
-        _widgetObservers = new List<IWidgetObserver>();
-    }
-    public void RegisterObserver(IWidgetObserver widgetObserver)
-    {
-      _widgetObservers.Add(widgetObserver);
     }
 
-    public void RemoveObserver(IWidgetObserver widgetObserver)
-    {
-        _widgetObservers.Remove(widgetObserver);
-    }
+    public delegate void NewsChangeEventsHandler(object sender, NewsEventArgs args);
+    public event NewsChangeEventsHandler NewsChanged;
 
-    public void NotifyObserver()
-    {
-        var twitter = GetTwitterNews();
-        var lenta = GetLentaNews();
-        var tv = GetTvNews();
-        
-        foreach (var observer in _widgetObservers)
-        {
-          observer.Update(twitter, lenta, tv);
-        }
-    }
-    
-    
     public string GetTwitterNews()
     {
         var news = new List<string>
@@ -45,6 +24,7 @@ public class NewsAggregator : ISubject
         };
         return news[_random.Next(3)];
     }
+
     public string GetLentaNews()
     {
         var news = new List<string>
@@ -55,6 +35,7 @@ public class NewsAggregator : ISubject
         };
         return news[_random.Next(3)];
     }
+
     public string GetTvNews()
     {
         var news = new List<string>
@@ -65,8 +46,14 @@ public class NewsAggregator : ISubject
         };
         return news[_random.Next(3)];
     }
+
     public void NewNewsAvailable()
     {
-        NotifyObserver();
+        var twitter = GetTwitterNews();
+        var lenta = GetLentaNews();
+        var tv = GetTvNews();
+
+        if (NewsChanged != null)
+                NewsChanged(this, new NewsEventArgs(twitter, lenta, tv));
     }
 }
