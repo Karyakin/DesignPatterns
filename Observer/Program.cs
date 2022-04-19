@@ -19,6 +19,9 @@ newsAggregator.NewsChanged += tvWidget.Update;
 
 newsAggregator.NewNewsAvailable();
 Console.WriteLine();
+
+newsAggregator.NewsChanged -= lentaWidget.Update;
+
 newsAggregator.NewNewsAvailable();
 
 
