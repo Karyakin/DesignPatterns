@@ -10,10 +10,6 @@ public class NewsAggregator
     {
         _random = new Random();
     }
-
-    public delegate void NewsChangeEventsHandler(object sender, NewsEventArgs args);
-    public event NewsChangeEventsHandler NewsChanged;
-
     public string GetTwitterNews()
     {
         var news = new List<string>
@@ -46,6 +42,10 @@ public class NewsAggregator
         };
         return news[_random.Next(3)];
     }
+
+    
+    public delegate void NewsChangeEventsHandler(object sender, NewsEventArgs args);
+    public event NewsChangeEventsHandler NewsChanged;
 
     public void NewNewsAvailable()
     {

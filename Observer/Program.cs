@@ -6,6 +6,8 @@
 
 
 using Observer.News;
+using Observer.Weather;
+using Observer.Weather.Region;
 using Observer.Widgets;
 
 var newsAggregator = new NewsAggregator();
@@ -23,6 +25,14 @@ Console.WriteLine();
 newsAggregator.NewsChanged -= lentaWidget.Update;
 
 newsAggregator.NewNewsAvailable();
+
+
+
+var weatherGeneraror = new WeatherGenerator();
+var mosckowWeather = new MoskowWeather();
+
+weatherGeneraror.WeatherChanged += mosckowWeather.Update;
+weatherGeneraror.WeatherAvaileble();
 
 
 
