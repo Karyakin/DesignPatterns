@@ -7,6 +7,8 @@ public class Golf : Car
     private CarPartsFactory _factory;
     public Golf(CarPartsFactory factory)
     {
+        Name = "Golf";
+        Boby = "Hatchback";
         _factory = factory;
     }
 
@@ -19,9 +21,5 @@ public class Golf : Car
         Engine = _factory.CreateEngine();
         Wheels = _factory.CreateWheels();
         
-        
-       
-        Console.WriteLine($"Paint color is: {PaintColor}");
-        Console.WriteLine($"Wheels are {Wheels}");
     }
 }

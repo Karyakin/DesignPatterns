@@ -12,13 +12,6 @@ public abstract class Car
     protected Wheels Wheels;
 
     public abstract void Configure();
-    /*{
-        Console.WriteLine($"Configuring {Name}");
-        Console.WriteLine($"Engine is: {Engine}");
-        Console.WriteLine($"Boby is: {Boby}");
-        Console.WriteLine($"Paint color is: {PaintColor}");
-        Console.WriteLine($"Wheels are {Wheels}");
-    }*/
 
     public void AssembleBody()
     {

@@ -2,13 +2,14 @@
 
 namespace Factory.Cars.Russian;
 
-public class Passat : Car
+public class Touareg : Car
 {
     private CarPartsFactory _factory;
-    public Passat(CarPartsFactory factory)
+
+    public Touareg(CarPartsFactory factory)
     {
-        Name = "Passat";
-        Boby = "Sedan";
+        Name = "Touareg";
+        Boby = "Jeep";
         _factory = factory;
     }
 
@@ -16,11 +17,9 @@ public class Passat : Car
     {
         Console.WriteLine($"Configuring {Name}");
         Console.WriteLine($"Boby is: {Boby}");
-        
+
         PaintColor = _factory.CreatePaint();
         Engine = _factory.CreateEngine();
         Wheels = _factory.CreateWheels();
-  
-        Console.WriteLine($"Wheels are {Wheels}");
     }
 }

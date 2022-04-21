@@ -1,5 +1,4 @@
 ﻿using Factory.Cars;
-using Factory.Cars.Deutsch;
 using Factory.Cars.Russian;
 using Factory.Factory;
 using Factory.PartsFactory;
@@ -17,9 +16,9 @@ public class RussianVolkswagenFactory : VolkswagenFactory
         if (type == "Golf")
             return new Golf(factory);
         if (type == "Touareg")
-            return new RussianTouareg(factory);
+            return new Touareg(factory);
         if (type == "Tiguan")
-            return new RussianTiguan(factory);
+            return new Tiguan(factory);
         if (type == "Passat")
             return new Passat(factory);
 
