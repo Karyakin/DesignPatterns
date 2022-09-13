@@ -1,6 +1,8 @@
 ﻿using AbstractFactory;
 using AbstractFactory.Cars;
 using AbstractFactory.Cars.Сoncretely;
+using AbstractFactory.Country;
+using AbstractFactory.Country.Concretely;
 using AbstractFactory.Сoncretely.CocaCola;
 using AbstractFactory.Сoncretely.Pepsi;
 using AbstractFactory.Сoncretely.Schweppes;
@@ -21,6 +23,13 @@ try
     carCreator = new CarCreator(new OpelFactory());
     carCreator.Run();
 
+    carCreator = new CarCreator(new BmwFactory());
+    carCreator.Run();
+
+
+    CountryCreator? countryCreator;
+    countryCreator = new CountryCreator(new RussiaFactory());
+    countryCreator.Run();
 }
 catch (Exception e)
 {
