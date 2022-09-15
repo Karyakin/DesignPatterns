@@ -6,7 +6,7 @@ namespace AbstractFactory.Country;
 public class CountryCreator
 {
     private AbstractInteractor _interactor;
-    private AbstractName _name;
+    private AbstractName _name; 
     private AbstractPopulation _population;
 
     public CountryCreator(CountryAbstractFactory abstractFactory)
