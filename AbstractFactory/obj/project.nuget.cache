@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hgMMyTRwoPfaaqLOLZFetKaoabrSCd3qM/Pmkr5+ORGFvPkHCj8J2ZbdJMIk3tVYrwn8IvLVrgWo9LfNpug5Ow==",
+  "dgSpecHash": "iyd13WG55QP+eRshVTx2XHqgstyYcKzqOaPI0gGqqJRq6WxpF+S6xSSDCc8CuURBh4FtbMmc16ZZ2kfHMsNkRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\37544\\Projects\\Patterns\\AbstractFactory\\AbstractFactory.csproj",
+  "projectFilePath": "C:\\Users\\d.karyakin\\Desktop\\Project\\Patterns\\AbstractFactory\\AbstractFactory.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

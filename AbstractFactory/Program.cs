@@ -3,6 +3,7 @@ using AbstractFactory.Cars;
 using AbstractFactory.Cars.Сoncretely;
 using AbstractFactory.Country;
 using AbstractFactory.Country.Concretely;
+using AbstractFactory.Country.Concretely.Africa;
 using AbstractFactory.Сoncretely.CocaCola;
 using AbstractFactory.Сoncretely.Pepsi;
 using AbstractFactory.Сoncretely.Schweppes;
@@ -30,6 +31,10 @@ try
     CountryCreator? countryCreator;
     countryCreator = new CountryCreator(new RussiaFactory());
     countryCreator.Run();
+
+    countryCreator = new CountryCreator(new AfricaFactory());
+    countryCreator.Run();
+
 }
 catch (Exception e)
 {
