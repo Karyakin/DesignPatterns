@@ -2,7 +2,7 @@
 
 namespace FactoryMethod.Domain.MemberShips;
 
-internal class BmwX1 : ICarsModification
+internal class BmwX1 : ICars
 {
     private readonly string _name;
     private decimal _defaultPrice;
@@ -19,8 +19,8 @@ internal class BmwX1 : ICarsModification
         _defaultPrice = CarsConst.BmwX1DefaultPrice;
     }
 
-    public string Name { get; }
-    public decimal DefaultPrice { get; }
+    public string Name => _name;
+    public decimal DefaultPrice => _defaultPrice;
     public bool BlackGlass => _blackGlass;
     public bool CdMultimedia => _cdMultimedia;
     public int WheelRadius => _wheelRadius;
@@ -42,7 +42,7 @@ internal class BmwX1 : ICarsModification
     }
 }
 
-internal class BmwX3 : ICarsModification
+internal class BmwX3 : ICars
 {
     private readonly string _name;
     private decimal _defaultPrice;
@@ -56,11 +56,11 @@ internal class BmwX3 : ICarsModification
         _cdMultimedia = cdMultimedia;
         _wheelRadius = wheelRadius;
         _name = "BmwX3";
-        _defaultPrice = CarsConst.BmwX1DefaultPrice;
+        _defaultPrice = CarsConst.BmwX3DefaultPrice;
     }
 
-    public string Name { get; }
-    public decimal DefaultPrice { get; }
+    public string Name => _name;
+    public decimal DefaultPrice => _defaultPrice;
     public bool BlackGlass => _blackGlass;
     public bool CdMultimedia => _cdMultimedia;
     public int WheelRadius => _wheelRadius;
@@ -81,7 +81,7 @@ internal class BmwX3 : ICarsModification
         return totalPrice;
     }
 
-    internal class BmwX5 : ICarsModification
+    internal class BmwX5 : ICars
     {
         private readonly string _name;
         private decimal _defaultPrice;
@@ -94,12 +94,12 @@ internal class BmwX3 : ICarsModification
             _blackGlass = blackGlass;
             _cdMultimedia = cdMultimedia;
             _wheelRadius = wheelRadius;
-            _name = "BmwX3";
-            _defaultPrice = CarsConst.BmwX1DefaultPrice;
+            _name = "BmwX5";
+            _defaultPrice = CarsConst.BmwX5DefaultPrice;
         }
 
-        public string Name { get; }
-        public decimal DefaultPrice { get; }
+        public string Name => _name;
+        public decimal DefaultPrice => _defaultPrice;
         public bool BlackGlass => _blackGlass;
         public bool CdMultimedia => _cdMultimedia;
         public int WheelRadius => _wheelRadius;

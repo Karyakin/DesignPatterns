@@ -3,7 +3,7 @@
 internal static class CarsConst
 {
     internal const decimal BmwX1DefaultPrice = 100;
-    internal const decimal BmwX2DefaultPrice = 200;
+    internal const decimal BmwX5DefaultPrice = 500;
     internal const decimal BmwX3DefaultPrice = 300;
     
     internal const decimal BlackGlass = 50;

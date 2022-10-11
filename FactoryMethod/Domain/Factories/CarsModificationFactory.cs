@@ -1,4 +1,6 @@
-﻿namespace FactoryMethod.Domain.Factories;
+﻿using FactoryMethod.Domain.MemberShips;
+
+namespace FactoryMethod.Domain.Factories;
 
 internal class BmwX1Factory : CarsFactory
 {
@@ -12,26 +14,48 @@ internal class BmwX1Factory : CarsFactory
         _cdMultimedia = cdMultimedia;
         _wheelRadius = wheelRadius;
     }
-    
-    public override ICarsModification GetCars()
+
+    public override ICars GetCars()
     {
-        BmwX1Factory x1Factory = new BmwX1Factory(_blackGlass, _cdMultimedia, _wheelRadius);
-        return null;
+        return new BmwX1(_blackGlass, _cdMultimedia, _wheelRadius);
     }
+    
 }
 
 internal class BmwX3Factory : CarsFactory
 {
-    public override ICarsModification GetCars()
+    private readonly bool _blackGlass;
+    private readonly bool _cdMultimedia;
+    private readonly int _wheelRadius;
+
+    public BmwX3Factory(bool blackGlass, bool cdMultimedia, int wheelRadius)
     {
-        throw new NotImplementedException();
+        _blackGlass = blackGlass;
+        _cdMultimedia = cdMultimedia;
+        _wheelRadius = wheelRadius;
+    }
+    
+    public override ICars GetCars()
+    {
+        return new BmwX3(_blackGlass, _cdMultimedia, _wheelRadius);
     }
 }
 
 internal class BmwX5Factory : CarsFactory
 {
-    public override ICarsModification GetCars()
+    private readonly bool _blackGlass;
+    private readonly bool _cdMultimedia;
+    private readonly int _wheelRadius;
+
+    public BmwX5Factory(bool blackGlass, bool cdMultimedia, int wheelRadius)
     {
-        throw new NotImplementedException();
+        _blackGlass = blackGlass;
+        _cdMultimedia = cdMultimedia;
+        _wheelRadius = wheelRadius;
+    }
+    
+    public override ICars GetCars()
+    {
+        return new BmwX3.BmwX5(_blackGlass, _cdMultimedia, _wheelRadius);
     }
 }

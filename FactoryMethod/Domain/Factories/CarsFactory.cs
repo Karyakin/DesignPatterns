@@ -2,5 +2,5 @@
 
 internal abstract class CarsFactory
 {
-    public abstract ICarsModification GetCars();
+    public abstract ICars GetCars();
 }

@@ -1,6 +1,6 @@
 ﻿namespace FactoryMethod.Domain;
 
-internal interface ICarsModification
+internal interface ICars
 {
     string Name { get; }
     decimal DefaultPrice { get; }
